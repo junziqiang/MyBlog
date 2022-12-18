@@ -59,6 +59,8 @@ category_map: # edit for Theme.shoka
   AcWing: AcWing
   基础课: Basic
   基础算法: BasicAlgorithm
+  搜索: Search
+  图论: Graph
 tag_map:
 
 

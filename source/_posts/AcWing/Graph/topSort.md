@@ -1,18 +1,10 @@
 ---
-title: topSort848
+title: 拓扑排序
 date: 2022/12/17 20:46:25
 categories:
-- [AcWing,基础课]
+- [AcWing,图论]
 tags:
 ---
-```C++
-/**
- * @file AcWing848.cpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2022-11-17
- * 
 给定一个 n 个点 m 条边的有向图，点的编号是 1 到 n，图中可能存在重边和自环。
 
 请输出任意一个该有向图的拓扑序列，如果拓扑序列不存在，则输出 −1。
@@ -38,6 +30,15 @@ tags:
 1 3
 输出样例：
 1 2 3
+```cpp
+/**
+ * @file AcWing848.cpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-11-17
+ * 
+
  * @copyright Copyright (c) 2022
  * 
  */
