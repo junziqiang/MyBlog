@@ -5,7 +5,7 @@ categories:
 - [AcWing,基础课]
 tags:
 ---
-```C++
+```cpp
 /**
  * @file AcWing844.cpp
  * @author your name (you@domain.com)
