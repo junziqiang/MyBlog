@@ -115,7 +115,7 @@ valine:
   placeholder: ヽ(○´∀`)ﾉ♪ # Comment box placeholder
   pageSize: 10 # Pagination size
   lang: zh-CN
-  tagMember:
+  tagMeta:
     visitor: 新朋友
     master: 主人
     friend: 小伙伴
@@ -124,6 +124,8 @@ valine:
     master: "var(--color-orange)"
     friend: "var(--color-aqua)"
     investor: "var(--color-pink)"
+  tagMember:
+    master: "YjiD1Xbotmll1thEIXbys6H6Dqi1O9+2NuyD/+YF3ok="
 
 
 # bgm
