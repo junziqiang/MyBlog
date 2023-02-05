@@ -1,9 +1,10 @@
 ---
-title: DFS
+title: 基本DFS
 date: 2022/12/17 20:46:25
+math: true
 categories:
 - [AcWing,搜索]
-tags:
+tags: [基本DFS, 算法基础课]
 ---
 # 排列数字
 给定一个整数 n，将数字 1∼n 排成一排，将会有很多种排列方法。
@@ -111,58 +112,50 @@ Q...
 ...Q
 .Q..
 ```cpp
-/**
- * @file AcWing843.cpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2022-11-16
- * 
-
- * @copyright Copyright (c) 2022
- * 
- */
-
 #include<bits/stdc++.h>
 using namespace std;
 
+const int N = 10;
 int n;
-// 对角线个数为2倍
-const int N = 20;
+
 char g[N][N];
-bool col[N], dg[N], udg[N];
-void dfs(int u) {
+bool col[N], dg[2 * N], udg[2 * N];
+
+// u为行数
+void dfs(int u)
+{
     if (u == n) {
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < n; j++)
                 cout << g[i][j];
-            }
             cout << endl;
         }
         cout << endl;
+        return;
     }
-    // 枚举皇后能放在第几列
+    // 枚举第几列
     for (int i = 0; i < n; i++) {
-        // 对角线的方程根据坐标系来定
-        if (!col[i] && !dg[u - i + n] && !udg[u + i]) {
-            col[i] = dg[u - i + n] = udg[u + i] = true;
+        if (!col[i] && !dg[n + i - u] && !udg[u + i]) {
             g[u][i] = 'Q';
+            col[i] = dg[n + i - u] = udg[u + i] = true;
             dfs(u + 1);
+            col[i] = dg[n + i -u] = udg[u + i] = false;
             g[u][i] = '.';
-            col[i] = dg[u - i + n] = udg[u + i] = false;
         }
     }
 }
+
 int main()
 {
     cin >> n;
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < n; j++)
             g[i][j] = '.';
-        }
     }
+    // dfs,从第一行开始放
     dfs(0);
     return 0;
+    
 }
 ```
 # 树的重心
@@ -195,63 +188,50 @@ int main()
 输出样例：
 4
 ```cpp
-/**
- * @file AcWing846.cpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2022-11-16
- * 
-
- * @copyright Copyright (c) 2022
- * 
- */
-
 #include<bits/stdc++.h>
 using namespace std;
-int n;
-const int N = 1e5 + 10, M = 2 * N;
-// 邻接表的头结点， 节点值， next
-int h[N], e[M], ne[M], idx;
 
-int ans = INT_MAX;
+const int N = 1e5 + 10;
+
+int n;
+int h[N], e[2 * N], ne[2 * N], idx;
 bool st[N];
+int ans = 0x3f3f3f3f;
 
 void add(int a, int b)
 {
-    e[idx] = b;
-    ne[idx] = h[a];
-    h[a] = idx++;
+    e[idx] = b, ne[idx] = h[a], h[a] = idx++;
 }
-// 以u为根节点的树，节点总数量
+
+// 根节点为u的子树，节点个数
 int dfs(int u)
 {
     st[u] = true;
-    int sum = 1, res = 0;
-    for (int i = h[u]; i != -1; i = ne[i]) {
-        int j = e[i];
-        if (!st[j]) {
-            int s = dfs(j);
-            res = max(res, s);
-            sum += s;
-        }
+    int size = 0, sum = 0;
+    for (int i = h[u]; ~i; i = ne[i]) {
+        int j = e[i]; // 节点编号
+        if (st[j]) continue;
+        int childSize = dfs(j);
+        size = max(size, childSize);
+        sum += childSize;
     }
-    // 抛去子树后的节点数量
-    res = max(res, n - sum);
-    ans = min(ans, res);
-    return sum;
+    int otherSize = n - sum - 1;
+    size = max(size, otherSize);
+    ans = min(ans, size);
+    return sum + 1;
 }
 int main()
 {
     cin >> n;
     memset(h, -1, sizeof h);
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n; i++) {
         int a, b;
         cin >> a >> b;
         add(a, b);
-        add(b , a);
+        add(b, a);
     }
     dfs(1);
-    cout << ans <<endl;
+    cout << ans << endl;
+    return 0;
 }
 ```

@@ -1,5 +1,5 @@
 ---
-title: BFS
+title: 基本BFS
 date: 2022/12/17 20:46:25
 categories:
 - [AcWing,搜索]
