@@ -1,6 +1,6 @@
 alternate: JunZiqiang
 
-#statics: //cdn.jsdelivr.net/gh/junziqiang/junziqiang.github.io@latest/
+statics: //cdn.jsdelivr.net/gh/junziqiang/junziqiang.github.io@latest/
 darkmode: true
 auto_scroll: false
 
