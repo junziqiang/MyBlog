@@ -1,0 +1,156 @@
+alternate: JunZiqiang
+
+statics: //cdn.jsdelivr.net/gh/junziqiang/junziqiang.github.io@latest/
+darkmode: true
+auto_scroll: false
+
+# 是否显示页面加载动画 loading-cat
+loader:
+  start: false # 当初次打开页面时，显示加载动画
+  switch: false # tab 切换到其他页面时，显示加载动画
+
+  fireworks:
+  enable: true # 是否启用
+  color: # 烟花颜色
+    - "rgba(255,182,185,.9)"
+    - "rgba(250,227,217,.9)"
+    - "rgba(187,222,214,.9)"
+    - "rgba(138,198,209,.9)"
+
+font:
+  enable: true
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+  # Global font settings used for all elements inside <body>.
+  global:
+    external: true
+    family: Mulish
+    size:
+
+  # Font settings for alternate title.
+  logo:
+    external: true
+    family: Fredericka the Great
+    size: 3.5
+
+  # Font settings for site title.
+  title:
+    external: true
+    family: Noto Serif JP
+    size: 2.5
+
+  # Font settings for headlines (<h1> to <h6>).
+  headings:
+    external: true
+    family: Noto Serif SC
+    size:
+
+  # Font settings for posts.
+  posts:
+    external: true
+    family:
+
+  # Font settings for <code> and code blocks.
+  codes:
+    external: true
+    family: Inconsolata
+
+# project of https://www.iconfont.cn/
+# //at.alicdn.com/t/font_1832207_c8i9n1ulxlt.css => 1832207_c8i9n1ulxlt
+iconfont: "1832207_c8i9n1ulxlt"
+
+
+menu:
+  home: / || home
+  posts:
+    default: / || feather
+    archives: /archives/ || list-alt
+    categories: /categories/ || th
+    tags: /tags/ || tags
+#  friends: /friends/ || heart
+
+# Social Links
+# Usage: `Key: permalink || icon || color`
+# Key is the link label showing to end users.
+# Value before `||` delimiter is the target permalink,
+# secend value is the name of Font icon.
+social:
+  github: https://github.com/junziqiang || github || "#191717"
+  #google: https://plus.google.com/yourname || google
+  #twitter: https://twitter.com/amehime || twitter || "#00aff0"
+  #zhihu: https://www.zhihu.com/people/rurismzk || zhihu || "#1e88e5"
+  #music: https://music.163.com/#/user/home?id=12886823 || cloud-music || "#e60026"
+  #weibo: https://weibo.com/amehime || weibo || "#ea716e"
+  #about: https://about.me/amehime || address-card || "#3b5998"
+  #email: mailto:yourname@mail.com || envelope || "#55acd5"
+  #facebook: https://www.facebook.com/yourname || facebook
+  #stackoverflow: https://stackoverflow.com/yourname || stack-overflow
+  #youtube: https://youtube.com/yourname || youtube
+  #instagram: https://instagram.com/yourname || instagram
+  #skype: skype:yourname?call|chat || skype
+  #douban: https://www.douban.com/people/yourname/ || douban
+
+footer:
+  # Specify the date when the site was setup. If not defined, current year will be used.
+  since: 2010
+  count: true
+
+post:
+  count: true
+
+
+# ---------------------------------------------------------------
+# Third Party Plugins & Services Settings
+# ---------------------------------------------------------------
+
+# Comments
+# Valine
+# For more information: https://valine.js.org, https://github.com/xCss/Valine
+valine:
+  appId: 0uTyxQ6hzfbmo42GMaqQD9er-gzGzoHsz
+  appKey: XpbIzQ7oWkrLhTRrxfeyiKei
+  placeholder: ヽ(○´∀`)ﾉ♪ # Comment box placeholder
+  pageSize: 10 # Pagination size
+  lang: zh-CN
+  tagMeta:
+    visitor: 新朋友
+    master: 主人
+    friend: 小伙伴
+    investor: 金主粑粑
+  tagColor:
+    master: "var(--color-orange)"
+    friend: "var(--color-aqua)"
+    investor: "var(--color-pink)"
+  tagMember:
+    master: "YjiD1Xbotmll1thEIXbys6H6Dqi1O9+2NuyD/+YF3ok="
+
+
+# bgm
+# audio:
+#   - https://music.163.com/song?id=1387098940
+#   - https://music.163.com/#/playlist?id=2088001742
+#   - https://www.xiami.com/collect/250830668
+#   - https://y.qq.com/n/yqq/playsquare/3535982902.html
+# Dependencies: https://github.com/amehime/hexo-renderer-multi-markdown-it
+pangu: true
+
+# ---------------------------------------------------------------
+# analytics & SEO Settings
+# ---------------------------------------------------------------
+
+
+# Disable Baidu transformation on mobile devices.
+disable_baidu_transformation: true
+
+# Automatically add external URL with Base64 encrypt & decrypt.
+exturl: true
+
+sidebar:
+  # Sidebar Position.
+  position: right
+  #position: right
+  # Replace the default avatar image and set the url here.
+  avatar: avatar.jpg
